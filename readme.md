@@ -61,6 +61,11 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
     ...
 ```
 
+Si la meteo n'est pas disponible dans la base de données (pour n'importe quelle raison), la valeur sera -1
+
+Les directions ne sont pas séparées, ainsi on pourra trouver facilement toutes les manières de prendre une même intersection.
+
+
 
 ## Génération des données
 
