@@ -11,33 +11,12 @@ A définir
 ## "Requirements"
 A définir
 
-# Test video
-## video, from file
-<video src="gifs/position_trigger_02_12_2023-21_22_57_h264.gif" width=180/>
-
-## video, from url
-<video src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
-
-## gif, from file
-![Gif from file](gifs/position_trigger_02_12_2023-21_22_57_h264.gif)
-
-
-## gif, from url
-![Gif from URL](https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
-
 
 ## img, from URL
-<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
+<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
 
 ## other way of writing url
 ![](https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
-
-
-## random gif from internet
-### standard way
-![other gif](https://media.giphy.com/media/3o6gDPmm6ZvFVu4yJO/giphy.gif)
-### image way
-<img src="https://media.giphy.com/media/3o6gDPmm6ZvFVu4yJO/giphy.gif" width=180/>
 
 
 
