@@ -12,9 +12,9 @@ A définir
 A définir
 
 # Test video
-<video src="database_presentation/location0/position_trigger_02_12_2023-21_22_57.bag/position_trigger_02_12_2023-21_22_57_h264.mp4" width=180/>
+<video src="gifs/position_trigger_02_12_2023-21_22_57_h264.gif" width=180/>
 
-![Output sample](database_presentation/location0/position_trigger_02_12_2023-21_22_57.bag/position_trigger_02_12_2023-21_22_57_h264.mp4)
+![Output sample](gifs/position_trigger_02_12_2023-21_22_57_h264.gif)
 
 # Description des données
 Qu'est-ce que c'est un Rosbag?
