@@ -1,35 +1,55 @@
 location:
   longitude: -72.77264646602261
   latitude: 46.44603227778924
-n_bags: 4
+n_bags: 8
 n_directions: 0
 camera_informations: null
 bags:
+- name: position_trigger_02_10_2023-00_32_17.bag
+  date: '2023-02-10 05:32:17.200301+00:00'
+  weathercode: 53
+  meteo: Moderate Drizzle
+  direction: null
+  road_type: straight
+- name: position_trigger_02_11_2023-08_07_01.bag
+  date: '2023-02-11 13:07:01.708856+00:00'
+  weathercode: -1
+  meteo: null
+  direction: null
+  road_type: straight
+- name: position_trigger_02_11_2023-10_35_33.bag
+  date: '2023-02-11 15:35:33.186336+00:00'
+  weathercode: -1
+  meteo: null
+  direction: null
+  road_type: straight
 - name: position_trigger_02_12_2023-07_19_11.bag
   date: '2023-02-12 12:19:11.399182+00:00'
   weathercode: -1
   meteo: null
   direction: null
-  heading: null
   road_type: straight
 - name: position_trigger_02_12_2023-15_36_13.bag
   date: '2023-02-12 20:36:13.699862+00:00'
   weathercode: -1
   meteo: null
   direction: null
-  heading: null
   road_type: straight
 - name: position_trigger_02_12_2023-20_00_14.bag
   date: '2023-02-13 01:00:14.103294+00:00'
   weathercode: -1
   meteo: null
   direction: null
-  heading: null
   road_type: straight
 - name: position_trigger_02_13_2023-20_43_59.bag
   date: '2023-02-14 01:43:59.299618+00:00'
   weathercode: 3
   meteo: Overcast
   direction: null
-  heading: null
+  road_type: straight
+- name: position_trigger_02_15_2023-04_24_14.bag
+  date: '2023-02-15 09:24:14.300237+00:00'
+  weathercode: 2
+  meteo: Partly Cloudy
+  direction: null
   road_type: straight

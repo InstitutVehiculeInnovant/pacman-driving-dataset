@@ -48,3 +48,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+# large folder
+database_presentation/

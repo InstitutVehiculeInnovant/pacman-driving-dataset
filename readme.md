@@ -12,38 +12,14 @@ A définir
 A définir
 
 
-## img, from URL
+<!-- <img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif"> -->
 
-<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width="100" height= "50" />
-
-<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_12_2023-15_36_13_h264.gif" width = "100"/>
-
-
-<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_12_2023-20_00_14_h264.gif" width = "50">
-|
-<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_13_2023-20_43_59_h264.gif" width = "80">
-
-## table
+## visualisation
 
 |![][gif1] | ![][gif2] |
 |----------|-----------|
 |![][gif3] | ![][gif4] |
 
-
-
-
-[gif1]: https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif
-
-[gif2]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_12_2023-15_36_13_h264.gif
-
-[gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_12_2023-20_00_14_h264.gif
-
-[gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_13_2023-20_43_59_h264.gif
-
-<!-- 
-## other way of writing url
-![](https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
- -->
 
 
 # Description des données

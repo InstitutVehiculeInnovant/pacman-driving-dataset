@@ -3,7 +3,7 @@
     "longitude": -72.5365943640255,
     "latitude": 46.38825473122185
   },
-  "n_bags": 5,
+  "n_bags": 10,
   "n_directions": 0,
   "camera_informations": null,
   "bags": [
@@ -13,7 +13,6 @@
       "weathercode": -1,
       "meteo": null,
       "direction": null,
-      "heading": null,
       "road_type": "straight"
     },
     {
@@ -22,7 +21,6 @@
       "weathercode": -1,
       "meteo": null,
       "direction": null,
-      "heading": null,
       "road_type": "straight"
     },
     {
@@ -31,7 +29,6 @@
       "weathercode": 3,
       "meteo": "Overcast",
       "direction": null,
-      "heading": null,
       "road_type": "straight"
     },
     {
@@ -40,7 +37,6 @@
       "weathercode": 3,
       "meteo": "Overcast",
       "direction": null,
-      "heading": null,
       "road_type": "straight"
     },
     {
@@ -49,7 +45,46 @@
       "weathercode": 2,
       "meteo": "Partly Cloudy",
       "direction": null,
-      "heading": null,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_14_2023-19_46_43.bag",
+      "date": "2023-02-15 00:46:43.813638+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": null,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_14_2023-21_28_23.bag",
+      "date": "2023-02-15 02:28:23.870599+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": null,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_14_2023-22_21_05.bag",
+      "date": "2023-02-15 03:21:05.076537+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": null,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_14_2023-22_57_31.bag",
+      "date": "2023-02-15 03:57:31.984609+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": null,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_15_2023-03_54_17.bag",
+      "date": "2023-02-15 08:54:17.470899+00:00",
+      "weathercode": 1,
+      "meteo": "Mainly Clear",
+      "direction": null,
       "road_type": "straight"
     }
   ]
