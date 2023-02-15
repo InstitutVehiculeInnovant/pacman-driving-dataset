@@ -20,7 +20,10 @@ A définir
 |----------|-----------|
 |![][gif3] | ![][gif4] |
 
-
+[gif1]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_09_2023-21_44_29_h264.gif
+[gif2]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_10_2023-08_48_34_h264.gif
+[gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_11_2023-07_50_45_h264.gif
+[gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_11_2023-12_21_48_h264.gif
 
 # Description des données
 Qu'est-ce que c'est un Rosbag?
