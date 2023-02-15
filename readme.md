@@ -18,12 +18,16 @@ A définir
 ## video, from url
 <video src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
 
-## output sample, from file
-![Output sample](gifs/position_trigger_02_12_2023-21_22_57_h264.gif)
+## gif, from file
+![Gif from file](gifs/position_trigger_02_12_2023-21_22_57_h264.gif)
 
 
-## output sample, from url
-![Output sample](https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
+## gif, from url
+![Gif from URL](https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
+
+
+## img, from URL
+<img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
 
 
 # Description des données
