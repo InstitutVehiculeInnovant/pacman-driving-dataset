@@ -23,10 +23,12 @@ A définir
 |
 <img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/247b167dc6e6eb170ec09c5c1999440b6eb8382e/gifs/position_trigger_02_13_2023-20_43_59_h264.gif" width = "80">
 
-## reference 
-![][gif1]
+## table
 
-<img src= [gif2] width = "80">
+|![][gif1] | ![][gif2] |
+|----------|-----------|
+|![][gif3] | ![][gif4] |
+
 
 
 
