@@ -12,9 +12,19 @@ A définir
 A définir
 
 # Test video
+## video, from file
 <video src="gifs/position_trigger_02_12_2023-21_22_57_h264.gif" width=180/>
 
+## video, from url
+<video src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
+
+## output sample, from file
 ![Output sample](gifs/position_trigger_02_12_2023-21_22_57_h264.gif)
+
+
+## output sample, from url
+![Output sample](https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif)
+
 
 # Description des données
 Qu'est-ce que c'est un Rosbag?
