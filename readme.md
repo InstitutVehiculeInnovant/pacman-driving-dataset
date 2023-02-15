@@ -11,7 +11,8 @@ A définir
 ## "Requirements"
 A définir
 
-
+# Test video
+<video src="database_presentation/location0/position_trigger_02_12_2023-21_22_57.bag/position_trigger_02_12_2023-21_22_57_h264.mp4" width=180/>
 
 # Description des données
 Qu'est-ce que c'est un Rosbag?
@@ -19,6 +20,8 @@ C'est quoi un topic?
 
 Liste des topics:
 Unités et signification de chacun, ce qu'il peut contenir. La fréquence
+
+
 
 
 
