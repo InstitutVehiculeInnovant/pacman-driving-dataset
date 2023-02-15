@@ -29,6 +29,12 @@ A définir
 ## img, from URL
 <img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/src/main/gifs/position_trigger_02_12_2023-07_19_11_h264.gif" width=180/>
 
+## random gif from internet
+### standard way
+![other gif](https://media.giphy.com/media/3o6gDPmm6ZvFVu4yJO/giphy.gif)
+### image way
+<img src="https://media.giphy.com/media/3o6gDPmm6ZvFVu4yJO/giphy.gif" width=180/>
+
 
 # Description des données
 Qu'est-ce que c'est un Rosbag?
