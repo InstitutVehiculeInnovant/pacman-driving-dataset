@@ -25,8 +25,163 @@ A définir
 [gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_11_2023-07_50_45_h264.gif
 [gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_11_2023-12_21_48_h264.gif
 
+
+
+
+
+
 # Description des données
-Qu'est-ce que c'est un Rosbag?
+## ROS - Robot Operating System
+ROS est un ensemble de librairies et d'outils qui permettent de fabriquer une application de robotique. L'architecture ROS permet une communication simple entre différents éléments via la publication de messages vers des topics. 
+Pour recevoir un message, un élément doit *s'abonner* à /écouter un topic. Pour envoyer, il suffit de *publier* à cette adresse.
+
+Un **ROSbag** est un enregistrement des messages reçu par un ou plusieurs *topics*. 
+
+## Liste des topics enregistrés
+
+`Nom du topic`:
+Type de message Ros
+unité
+courte description
+
+`/bboxs`: 
+Type: Vision_msgs/msg/Detection2DArray
+Unité: 
+Description: 
+
+`/camera_info`: 
+Type:
+Unité: 
+Description: 
+
+`/can/abs`: 
+Type:
+Unité: 
+Description: 
+
+`/can/accel_lat`: 
+Type:
+Unité: 
+Description: 
+
+`/can/accel_long`: 
+Type:
+Unité: 
+Description: 
+
+`/can/accel_pedal_pos`: 
+Type:
+Unité: 
+Description: 
+
+`/can/accel_vert`: 
+Type:
+Unité: 
+Description: 
+
+`/can/brake_pressure`: 
+Type:
+Unité: 
+Description: 
+
+`/can/speed1`: 
+Type:
+Unité: 
+Description: 
+
+`/can/steer_col_tq`: 
+Type:
+Unité: 
+Description: 
+
+`/can/steering_angle`: 
+Type:
+Unité: 
+Description: 
+
+`/can/traction`: 
+Type:
+Unité: 
+Description: 
+
+`/can/wheel_fl_speed`: 
+Type:
+Unité: 
+Description: 
+
+`/can/wheel_fr_speed`: 
+Type:
+Unité: 
+Description: 
+
+`/can/wheel_rl_speed`: 
+Type:
+Unité: 
+Description: 
+
+`/can/wheel_rr_speed`: 
+Type:
+Unité: 
+Description: 
+
+Type:
+Unité: 
+Description: 
+`/fix`: 
+Type:
+Unité: 
+Description: 
+
+`/fix_velocity`: 
+Type:
+Unité: 
+Description: 
+
+`/heading`: 
+Type:
+Unité: 
+Description: 
+
+`/image_raw/compressed`: 
+Type:
+Unité: 
+Description: 
+
+`/imu/data`: 
+Type:
+Unité: 
+Description: 
+
+`/live_tracker`: 
+Type:
+Unité: 
+Description: 
+
+`/obj_centers`: 
+Type:
+Unité: 
+Description: 
+
+`/parameter_events`: 
+Type:
+Unité: 
+Description: 
+
+`/rosout`: 
+Type:
+Unité: 
+Description: 
+
+`/tracked_objects`: 
+Type:
+Unité: 
+Description: 
+
+
+
+
+
+
 C'est quoi un topic?
 
 Liste des topics:
