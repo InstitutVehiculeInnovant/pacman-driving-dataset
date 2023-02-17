@@ -26,8 +26,9 @@ A définir
 [gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/71eb4baa7f09b937749f95a6470cbb22a9652244/gifs_loc2/position_trigger_02_11_2023-12_21_48_h264.gif
 
 
-
-
+### Map
+![map with path of the car](gifs_loc2/loc2.png)
+Green dots are the positions of the cars in the rosbag. Blue are the closest road to the points found by the program. -> The road on which the car is probably.
 
 
 # Description des données
@@ -141,10 +142,10 @@ Type: sensor_msgs/msg/Imu
 Description: Direction du véhicule. Format Quaternion (w,x,y,z). Pour obtenir une orientation en °:  
 `heading = -atan2(2*(w*z + x*y), 1-2*(y**2 + z**2)) * 180 / PI`  
 **angles de mémoire**  
-Est: 0  
-Nord: 90  
-Sud: -90  
-Ouest: +-180  
+Est: 0°  
+Nord: 90°  
+Sud: -90°  
+Ouest: +-180°  
   
 `/image_raw/compressed`:   
 Type: sensor_msgs/msg/CompressedImage  
@@ -221,7 +222,7 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
     ...
 ```
 
-**Ajouter ABS dans le code**
+**Ajouter ABS et essui-glace dans le code**
 
 Si la meteo n'est pas disponible dans la base de données (pour n'importe quelle raison), la valeur sera -1
 
