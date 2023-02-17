@@ -27,9 +27,10 @@ A définir
 
 
 ### Map
-![map with path of the car](gifs_loc2/loc2.png)
 Green dots are the positions of the cars in the rosbag. Blue are the closest road to the points found by the program. -> The road on which the car is probably.
 
+
+![map with path of the car](gifs_loc2/loc2.png)
 
 # Description des données
 ## ROS - Robot Operating System
@@ -231,25 +232,13 @@ Les directions ne sont pas séparées, ainsi on pourra trouver facilement toutes
 
 
 ## Génération des données
+De nombreux véhicules du Ministère du Transport du Québec sont équipés de caméras, de GPS et d'IMU. En plus de ces capteurs, un connecteur récupère les informations du CAN Bus du véhicule afin d'avoir accès à des informations telles que la vitesse, l'accélération, la position du volant, etc.
 
+Pour la création de ce jeu de données, 4 types de routes ont été choisies pour couvrir un maximum de situations possibles:
+- Routes droites
+- Routes courbes
+- Intersections
+- Entrées/sorties d'autoroutes
 
-EN: (
-For the driving videos, sample points were chosen on specific type of roads:
--Straight roads
--Curvy roads
--intersection between two roads
--Starting/exit of highway
-
-Multiple cars were equiped with gps to trigger when they passed through these points.)
-
-
-
-# License
-
-# Citations
-
-# Travail additionnel
-(si on veut citer les autres travaux de IVIS)
-
-
+~200 points GPS sont placés sur chaque type de routes à travers le Québec, lorsqu'un véhicule passe par l'un de ces points, il enregistre un RosBag d'une dizaine de secondes.
 
