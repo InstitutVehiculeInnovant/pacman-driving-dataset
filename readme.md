@@ -5,14 +5,6 @@ Téléchargement des données.
 Les différentes sources semblaient conseiller de laisser les données RAWS en ligne puis d'avoir des scripts pour télécharger.
 Cela me semble adapter parce que je trouve intéressant de pouvoir télécharger les données dans des arrangements différents (trié par point ou par météo). Sauf si on arrive à faire un package qui garde ces deux informations et permet une séparation facile pour l'utilisateur. 
 
-## Preparation
-A définir
-
-## "Requirements"
-A définir
-
-
-<!-- <img src="https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/e66bc1afdbae3a840e1c8907b8f61a2c2a0ab905/gifs/position_trigger_02_12_2023-07_19_11_h264.gif"> -->
 
 ## visualisation
 
@@ -86,7 +78,7 @@ Description: Acceleration verticale. Dans la majorité des cas, elle correspond 
  
 `/can/brake_pressure`:  
 Type: std_msgs/msg/UInt16  
-Unité: Pas d'unité, range [0,65535] **Quel est la valeur maximale observée dans les données?**   
+Unité: Nm, range [0,65535] **Quel est la valeur maximale observée dans les données?**   
 Description: **pas sûr si c'est la valeur de la pedale ou une valeur dépendante d'autres paramètres non identifiés**  
  
 `/can/speed1`:  
@@ -96,8 +88,8 @@ Description: Vitesse du véhicule
  
 `/can/steer_col_tq`:   
 Type: std_msgs/msg/Float32   
-Unité: **unite?** range [-8,8]  
-Description: *Force appliquée au volant* **pas clair non plus**  
+Unité: Nm, range [-8,8]  
+Description: Force appliquée au volant  
 
 `/can/steering_angle`:  
 Type: std_msgs/msg/Float32   
@@ -136,7 +128,9 @@ Description: Position *GPS* du véhicule.
 `/fix_velocity`:   
 Type: geometry_msgs/msg/TwistWithCovarianceStamped  
 Unité: m/s  
-Description: Vitesse du véhicule **est-ce que X et Y sont basé sur le repère de la voiture ou longitude/latitude?**  
+Description: Vitesse du véhicule **est-ce que X et Y sont basé sur le repère de la voiture ou longitude/latitude?** 
+<!-- Velocity in local ENU frame... East, North, UP. Mais "Local" donc jsp si c'est la map ou la voiture le repère -->
+
   
 `/heading`:   
 Type: sensor_msgs/msg/Imu  
