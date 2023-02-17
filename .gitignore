@@ -49,5 +49,5 @@ Thumbs.db
 *.wmv
 
 # large folder
-database_presentation/
-gifs_loc1/
+# database_presentation/
+# gifs_loc1/
