@@ -46,24 +46,26 @@ Description: True lorsque l'ABS du vehicule est active, pas de messages le reste
 `/can/accel_lat`:  
 Type: std_msgs/msg/Float32  
 Unité: m/s²  
-Description: Accélération latérale ressentie par les occupants du véhicule. Une valeur positive représente une accélération vers la droite, en général parce que le véhicule tourne vers la gauche.   
-Une valeur négative est une accélération vers la gauche.  
+Description: Accélération latérale du véhicule par rapport à son référentiel. 
+<!-- Accélération latérale ressentie par les occupants du véhicule. Une valeur positive représente une accélération vers la droite, en général parce que le véhicule tourne vers la gauche.   
+Une valeur négative est une accélération vers la gauche.   -->
 
 `/can/accel_long`:  
 Type: std_msgs/msg/Float32  
 Unité: m/s²  
-Description: Accélération longitudinale ressentie par les occupants du véhicule. Une valeur positive représente une accélération du véhicule, les occupants sont pressés contre leur siège, le véhicule accélère les occupants vers l'avant.  
-Une valeur négative correspond à un freinage du véhicule et les occupants gardent leur inertie et peuvent être penché vers l'avant du véhicule. 
+Description: Accélération longitudinale du véhicule par rapport à son référentiel.
+<!-- Accélération longitudinale ressentie par les occupants du véhicule. Une valeur positive représente une accélération du véhicule, les occupants sont pressés contre leur siège, le véhicule accélère les occupants vers l'avant.  
+Une valeur négative correspond à un freinage du véhicule et les occupants gardent leur inertie et peuvent être penché vers l'avant du véhicule.  -->
  
 `/can/accel_pedal_pos`:  
 Type: std_msgs/msg/Float32  
 Unité: Pas d'unités, range [0,102.3]  
-Description: Accélération de la pédale conducteur transmise au véhicule. En cas de cruise control, la valeur correspond à celle donnée  par le cruise control.   
+Description: Position de la pédale d'accélération.
  
 `/can/accel_vert`:  
 Type: std_msgs/msg/Float32   
 Unité: m/s²  
-Description: Acceleration verticale. Dans la majorité des cas, elle correspond simplement à l'accélération gravitationnelle.    
+Description: Accélération verticale.
  
 `/can/brake_pressure`:  
 Type: std_msgs/msg/UInt16  
@@ -84,11 +86,11 @@ Description: Force appliquée au volant
 Type: std_msgs/msg/Float32   
 Unité (à déterminer): range [-4876.8,1676.7]. 
 Description: Position du volant. Negatif: tournant vers la droite. Positif: tournant vers la gauche  
-<!-- 
-`/can/traction`:  **Donnees?**  
+
+`/can/traction`:  
 Type: std_msgs/msg/Bool  
-Unité:   
-Description:    -->
+Unité: **A déterminer**    
+Description: Activation du modele de traction control.  
 
 `/can/wheel_fl_speed`:   
 Type: std_msgs/msg/Float32  
@@ -121,29 +123,12 @@ Description: Vitesse du véhicule. Le repère est ENU (East, North, Up), X corre
   
 `/heading`:   
 Type: sensor_msgs/msg/Imu  
-Description: Direction du véhicule. Format Quaternion (w,x,y,z). Pour obtenir une orientation en °:  
-`heading = -atan2(2*(w*z + x*y), 1-2*(y**2 + z**2)) * 180 / PI`  
-Orientation par rapport aux points cardinaux:  
-Est: 0°  
-Nord: 90°  
-Sud: -90°  
-Ouest: +-180°  
+Description: Direction du véhicule. Repère ENU.
   
 `/image_raw/compressed`:   
 Type: sensor_msgs/msg/CompressedImage  
 Format: JPEG  
 Description: Image de la route  
-  
-  
-`/parameter_events`:   
-Type: rcl_interfaces/msg/ParameterEvent  
-Unité:   
-Description: Présent par défaut dans un rosbag   
-  
-`/rosout`:   
-Type: rcl_interfaces/msg/Log  
-Unité: NA  
-Description: Logs, présent par défaut dans un rosbag  
   
 
 ## Structure des documents
@@ -176,7 +161,7 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
       name: "nomDuBag.bag"
       weathercode: 75
       meteo:  soleil
-      timestamp: 2022_01_27-10h00 (format exemple)
+      timestamp: '2022-11-17 09:31:12.661685+00:00' # format ISO 8601
       type: Intersection
     - bag:
       ...
