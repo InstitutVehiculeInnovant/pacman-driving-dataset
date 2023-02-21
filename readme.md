@@ -30,15 +30,10 @@ ROS est un ensemble de librairies et d'outils qui permettent de fabriquer une ap
 Pour recevoir un message, un élément doit *s'abonner* à /écouter un topic. Pour envoyer, il suffit de *publier* à cette adresse.
 
 Un **ROSbag** est un enregistrement des messages reçu par un ou plusieurs *topics*. 
-La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objets qui possèdent des valeurs et des listes. 
+La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objts qui possèdent des valeurs et des listes. 
 
 ## Liste des topics enregistrés
-__Notes__: Je pensais que la detection ne serait pas dans la database qu'on publie? *bbox, live_tracker, tracked_object, object_centers*
-  
-`/bboxs`:   
-Type: vision_msgs/msg/Detection2DArray  
-Description: En cas de de détection d'objet, la position de la bouding box ainsi que l'identifiant du type d'objet détecté sera   disponible dans detections.bbox.  
-  
+
 `/camera_info`:   
 Type: sensor_msgs/msg/CameraInfo  
 Description: **A completer** Probablement la calibration de la camera?  
@@ -72,8 +67,8 @@ Description: Acceleration verticale. Dans la majorité des cas, elle correspond 
  
 `/can/brake_pressure`:  
 Type: std_msgs/msg/UInt16  
-Unité: Nm, range [0,65535] **Quel est la valeur maximale observée dans les données?**   
-Description: **pas sûr si c'est la valeur de la pedale ou une valeur dépendante d'autres paramètres non identifiés**  
+Unité: Nm, range théorique [0,65535]. Les données n'ont pas présenté pas de valeurs supérieures à 2000Nm.
+Description: Force appliquée par la pédale de frein.
  
 `/can/speed1`:  
 Type: std_msgs/msg/Float32  
@@ -87,13 +82,13 @@ Description: Force appliquée au volant
 
 `/can/steering_angle`:  
 Type: std_msgs/msg/Float32   
-Unité: **Unite?** range [-4876.8,1676.7]  
+Unité (à déterminer): range [-4876.8,1676.7]. 
 Description: Position du volant. Negatif: tournant vers la droite. Positif: tournant vers la gauche  
-
+<!-- 
 `/can/traction`:  **Donnees?**  
 Type: std_msgs/msg/Bool  
 Unité:   
-Description:   
+Description:    -->
 
 `/can/wheel_fl_speed`:   
 Type: std_msgs/msg/Float32  
@@ -122,15 +117,13 @@ Description: Position *GPS* du véhicule.
 `/fix_velocity`:   
 Type: geometry_msgs/msg/TwistWithCovarianceStamped  
 Unité: m/s  
-Description: Vitesse du véhicule **est-ce que X et Y sont basé sur le repère de la voiture ou longitude/latitude?** 
-<!-- Velocity in local ENU frame... East, North, UP. Mais "Local" donc jsp si c'est la map ou la voiture le repère -->
-
+Description: Vitesse du véhicule. Le repère est ENU (East, North, Up), X correspond à la vitesse latérale tandis que Y la vitesse longitudinale.  
   
 `/heading`:   
 Type: sensor_msgs/msg/Imu  
 Description: Direction du véhicule. Format Quaternion (w,x,y,z). Pour obtenir une orientation en °:  
 `heading = -atan2(2*(w*z + x*y), 1-2*(y**2 + z**2)) * 180 / PI`  
-**angles de mémoire**  
+Orientation par rapport aux points cardinaux:  
 Est: 0°  
 Nord: 90°  
 Sud: -90°  
@@ -141,35 +134,17 @@ Type: sensor_msgs/msg/CompressedImage
 Format: JPEG  
 Description: Image de la route  
   
-`/imu/data`:  **Pas de données**  
-Type: sensor_msgs/msg/Imu  
-Unité:   
-Description:   
-  
-`/live_tracker`: **Meme chose que bbox?**  
-Type: vision_msgs/msg/Detection2DArray  
-Unité:   
-Description:   
-  
-`/obj_centers`:   
-Type: vision_msgs/msg/Detection2D  
-Unité:   
-Description:   
   
 `/parameter_events`:   
 Type: rcl_interfaces/msg/ParameterEvent  
 Unité:   
-Description: Présent par défaut  
+Description: Présent par défaut dans un rosbag   
   
 `/rosout`:   
 Type: rcl_interfaces/msg/Log  
 Unité: NA  
-Description: Logs, présent par défaut   
+Description: Logs, présent par défaut dans un rosbag  
   
-`/tracked_objects`: **?**  
-Type: vision_msgs/msg/Detection2DArray  
-Unité:   
-Description:   
 
 ## Structure des documents
 
