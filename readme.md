@@ -1,12 +1,10 @@
 # Documentation du jeu de données de conduite
 
 # Guide sur l'installation
-Téléchargement des données.
-Les différentes sources semblaient conseiller de laisser les données RAWS en ligne puis d'avoir des scripts pour télécharger.
-Cela me semble adapter parce que je trouve intéressant de pouvoir télécharger les données dans des arrangements différents (trié par point ou par météo). Sauf si on arrive à faire un package qui garde ces deux informations et permet une séparation facile pour l'utilisateur. 
-
+Un échantillon des données est disponible dans "database_presentation"
 
 ## visualisation
+Voici 4 gifs présentant le même tronçon de route prit des jours différents. 
 
 |![][gif1] | ![][gif2] |
 |----------|-----------|
@@ -19,8 +17,10 @@ Cela me semble adapter parce que je trouve intéressant de pouvoir télécharger
 
 
 ### Map
-Green dots are the positions of the cars in the rosbag. Blue are the closest road to the points found by the program. -> The road on which the car is probably.
-
+Voici une image de la carte correspondant aux videos ci-dessus.
+Les points verts représentent les différentes positions du véhicule sur la durée de la vidéo.
+Les lignes bleues sont les routes les plus proches des points verts retrouvées par l'algorithme.
+Autrement dit, les routes sur lesquelles le véhicule se trouve probablement. 
 
 ![map with path of the car](readme_images/loc2.png)
 
@@ -34,12 +34,6 @@ La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il 
 
 ## Liste des topics enregistrés
 __Notes__: Je pensais que la detection ne serait pas dans la database qu'on publie? *bbox, live_tracker, tracked_object, object_centers*
-
-
-`Nom du topic`:  
-Type de message Ros  
-unité si applicable  
-courte description  
   
 `/bboxs`:   
 Type: vision_msgs/msg/Detection2DArray  
