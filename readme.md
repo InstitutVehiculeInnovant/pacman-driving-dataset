@@ -69,7 +69,7 @@ Description: Accélération verticale.
  
 `/can/brake_pressure`:  
 Type: std_msgs/msg/UInt16  
-Unité: Nm, range théorique [0,65535]. Les données n'ont pas présenté pas de valeurs supérieures à 2000Nm.
+Unité: Nm, range théorique [0,65535]. Les données n'ont pas présenté pas de valeurs supérieures à 2000Nm.  
 Description: Force appliquée par la pédale de frein.
  
 `/can/speed1`:  
@@ -84,7 +84,7 @@ Description: Force appliquée au volant
 
 `/can/steering_angle`:  
 Type: std_msgs/msg/Float32   
-Unité (à déterminer): range [-4876.8,1676.7]. 
+Unité (à déterminer): range [-4876.8,1676.7].   
 Description: Position du volant. Negatif: tournant vers la droite. Positif: tournant vers la gauche  
 
 `/can/traction`:  
