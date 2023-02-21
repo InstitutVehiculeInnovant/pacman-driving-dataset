@@ -27,7 +27,7 @@ Autrement dit, les routes sur lesquelles le véhicule se trouve probablement.
 # Description des données
 ## ROS - Robot Operating System
 ROS est un ensemble de librairies et d'outils qui permettent de fabriquer une application de robotique. L'architecture ROS permet une communication simple entre différents éléments via la publication de messages vers des topics. 
-Pour recevoir un message, un élément doit *s'abonner* à /écouter un topic. Pour envoyer, il suffit de *publier* à cette adresse.
+Pour recevoir un message, un élément doit s'abonner à un topic. Pour envoyer, il suffit de *publier* à cette adresse.
 
 Un **ROSbag** est un enregistrement des messages reçu par un ou plusieurs *topics*. 
 La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objts qui possèdent des valeurs et des listes. 
