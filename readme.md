@@ -36,7 +36,7 @@ La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il 
 
 `/camera_info`:   
 Type: sensor_msgs/msg/CameraInfo  
-Description: **A completer** Probablement la calibration de la camera?  
+Description: **A déterminer**
   
 `/can/abs`:   
 Type: std_msgs/msg/Bool  
@@ -178,8 +178,6 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
       meteo:  soleil
       timestamp: 2022_01_27-10h00 (format exemple)
       type: Intersection
-      essui-glace: true
-      abs: false
     - bag:
       ...
 - position:
