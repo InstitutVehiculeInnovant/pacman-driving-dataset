@@ -150,6 +150,7 @@ Un JSON global référence tous les bags avec leur date, et la météo.
 Les "metadata.yaml" sont déjà présents dans la base de données et contiennent les infos relatives à chaque bag.
 
 *Strucutre d'informations.yaml:*
+-> A changer en Json
 ```yaml
 - position:
   nom_folder: "position1"
@@ -167,6 +168,26 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
 - position:
     ...
 ```
+```json
+{
+  "location": {
+    "longitude": -73.72278046025653,
+    "latitude": 45.54911467352514
+  },
+  "n_bags": 8,
+  "bags": [
+    {
+      "name": "position_trigger_02_09_2023-21_44_29.bag",
+      "date": "2023-02-10 02:44:29.399899+00:00", // format ISO 8601
+      "weathercode": 61,
+      "meteo": "Slight Rain",
+      "direction": null,
+      "road_type": "exit"
+    },
+    {}
+  ]
+}
+    ```
 
 **Ajouter ABS et essui-glace dans le code**
 
