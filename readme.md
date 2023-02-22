@@ -1,4 +1,10 @@
 # Documentation du jeu de données de conduite
+IVI Solution présente un jeu de données de conduite sur des routes Québécoises. Ce jeu de données est composé de vidéos de conduite, de données de capteurs internes du véhicules ainsi que des données GPS.
+Ces données ont été récupérées sur des routes Québécoises par une flotte de véhicules du Ministère du Transport du Québec.
+Cet ensemble de données répertorie X points de passages sur les routes, chacun avec un minimum de Y vidéos. 
+
+
+
 
 # Guide sur l'installation
 Un échantillon des données est disponible dans "database_presentation"
@@ -149,7 +155,7 @@ Un JSON global référence tous les bags avec leur date, et la météo.
 
 Les "metadata.yaml" sont déjà présents dans la base de données et contiennent les infos relatives à chaque bag.
 
-*Strucutre d'informations.json:*
+*Strucutre d'**informations.json**:*
 ```json
 {
   "location": {
