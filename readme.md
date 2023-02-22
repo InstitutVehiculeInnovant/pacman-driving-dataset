@@ -149,25 +149,7 @@ Un JSON global référence tous les bags avec leur date, et la météo.
 
 Les "metadata.yaml" sont déjà présents dans la base de données et contiennent les infos relatives à chaque bag.
 
-*Strucutre d'informations.yaml:*
--> A changer en Json
-```yaml
-- position:
-  nom_folder: "position1"
-  localisation : (lon,lat)
-  nombre_de_bags: 17
-  bags:
-    - bag:
-      name: "nomDuBag.bag"
-      weathercode: 75
-      meteo:  soleil
-      timestamp: '2022-11-17 09:31:12.661685+00:00' # format ISO 8601
-      type: Intersection
-    - bag:
-      ...
-- position:
-    ...
-```
+*Strucutre d'informations.json:*
 ```json
 {
   "location": {
