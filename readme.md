@@ -69,8 +69,8 @@ Description: Accélération verticale.
  
 `/can/brake_pressure`:  
 Type: std_msgs/msg/UInt16  
-Unité: Nm, range théorique [0,65535]. Les données n'ont pas présenté pas de valeurs supérieures à 2000Nm.  
-Description: Force appliquée par la pédale de frein.
+Unité: Nm, range théorique [0,65535].
+Description: Couple appliquée par la pédale de frein.
  
 `/can/speed1`:  
 Type: std_msgs/msg/Float32  
@@ -80,7 +80,7 @@ Description: Vitesse du véhicule
 `/can/steer_col_tq`:   
 Type: std_msgs/msg/Float32   
 Unité: Nm, range [-8,8]  
-Description: Force appliquée au volant  
+Description: Couple appliquée au volant  
 
 `/can/steering_angle`:  
 Type: std_msgs/msg/Float32   
@@ -133,8 +133,8 @@ Description: Image de la route
 
 ## Structure des documents
 
-Quatres dossiers séparent le type de route. Ensuite chaque sous-dossier contient tous les bags associés à une position.
-Un YAML global référence tous les bags avec leur date, et la météo. (copie en json pour avoir un avis du MTQ sur leurs préférences)
+Chaque dossier contient tous les bags associés à une position.
+Un JSON global référence tous les bags avec leur date, et la météo.
 
     .
     ├── position1
@@ -143,8 +143,7 @@ Un YAML global référence tous les bags avec leur date, et la météo. (copie e
     │   │   └── position_trigger1.bag_0.db3
     │   ├── position_trigger2.bag
     │   ├── ...
-    │   ├── informations.json
-    │   └── informations.yaml
+    │   └── informations.json
     ├── position2
     └── ...
 
@@ -154,7 +153,7 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
 ```yaml
 - position:
   nom_folder: "position1"
-  localisation : (-73,45)
+  localisation : (lon,lat)
   nombre_de_bags: 17
   bags:
     - bag:
