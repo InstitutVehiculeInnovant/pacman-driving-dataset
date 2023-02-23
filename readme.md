@@ -125,7 +125,7 @@ Description: Position *GPS* du véhicule.
 `/fix_velocity`:   
 Type: geometry_msgs/msg/TwistWithCovarianceStamped  
 Unité: m/s  
-Description: Vitesse du véhicule. Le repère est ENU (East, North, Up), X correspond à la vitesse latérale tandis que Y la vitesse longitudinale.  
+Description: Vitesse du véhicule. Le repère est ENU (East, North, Up). 
   
 `/heading`:   
 Type: sensor_msgs/msg/Imu  
@@ -196,3 +196,12 @@ Pour la création de ce jeu de données, 4 types de routes ont été choisies po
 
 ~200 points GPS sont placés sur chaque type de routes à travers le Québec, lorsqu'un véhicule passe par l'un de ces points, il enregistre un RosBag d'une dizaine de secondes.
 
+
+<!-- ## Transformée entre les différentes repères  
+Pour /fix 
+commentaire de PM:
+"Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture."
+
+Pour /image_raw/compressed
+"Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture."
+-->
