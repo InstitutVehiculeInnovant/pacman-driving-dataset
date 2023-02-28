@@ -162,7 +162,8 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
     "longitude": -73.72278046025653,
     "latitude": 45.54911467352514
   },
-  "n_bags": 8,
+  "n_bags": 10,
+  "n_directions": 2,
   "bags": [
     {
       "name": "position_trigger_02_09_2023-21_44_29.bag",
@@ -173,6 +174,13 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
       "road_type": "exit"
     },
     {}
+  ],
+  "directions": [
+    [
+      -139.6522782222222, //starting orientation
+      137.37112844444442 //ending orientation
+    ],
+    []
   ]
 }
 ```
