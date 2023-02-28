@@ -176,8 +176,10 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
   ]
 }
 ```
-
-**Ajouter ABS et essui-glace dans le code**
+<!-- 
+**Ajouter ABS et essui-glace dans le code** 
+Peut-être que non finalement.
+-->
 
 Si la meteo n'est pas disponible dans la base de données (pour n'importe quelle raison), la valeur sera -1
 
@@ -203,5 +205,5 @@ commentaire de PM:
 "Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture."
 
 Pour /image_raw/compressed
-"Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture."
+"Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture." 
 -->
