@@ -1,0 +1,83 @@
+{
+  "location": {
+    "longitude": -72.77264646602261,
+    "latitude": 46.44603227778924
+  },
+  "n_bags": 9,
+  "n_directions": 1,
+  "camera_informations": null,
+  "bags": [
+    {
+      "name": "position_trigger_02_25_2023-13_43_54.bag",
+      "date": "2023-02-25 18:43:54.302653+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_25_2023-15_42_00.bag",
+      "date": "2023-02-25 20:42:00.920058+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_25_2023-17_12_10.bag",
+      "date": "2023-02-25 22:12:10.793617+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_26_2023-11_45_27.bag",
+      "date": "2023-02-26 16:45:27.403207+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_26_2023-16_24_54.bag",
+      "date": "2023-02-26 21:24:54.499673+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_26_2023-21_28_19.bag",
+      "date": "2023-02-27 02:28:19.498151+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_27_2023-21_35_09.bag",
+      "date": "2023-02-28 02:35:09.875654+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_28_2023-04_50_34.bag",
+      "date": "2023-02-28 09:50:34.105184+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    },
+    {
+      "name": "position_trigger_02_28_2023-08_19_00.bag",
+      "date": "2023-02-28 13:19:00.104964+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0,
+      "road_type": "straight"
+    }
+  ]
+}

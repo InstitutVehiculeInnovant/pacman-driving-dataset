@@ -1,0 +1,67 @@
+location:
+  longitude: -72.5723196575008
+  latitude: 46.33310672819373
+n_bags: 10
+n_directions: 2
+camera_informations: null
+bags:
+- name: position_trigger_02_22_2023-14_41_16.bag
+  date: '2023-02-22 19:41:16.659142+00:00'
+  weathercode: 0
+  meteo: Clear Sky
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_22_2023-16_41_13.bag
+  date: '2023-02-22 21:41:13.276490+00:00'
+  weathercode: 0
+  meteo: Clear Sky
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_23_2023-08_18_40.bag
+  date: '2023-02-23 13:18:40.772114+00:00'
+  weathercode: 53
+  meteo: Moderate Drizzle
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_23_2023-09_44_15.bag
+  date: '2023-02-23 14:44:15.763042+00:00'
+  weathercode: 51
+  meteo: Light Drizzle
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_23_2023-11_17_16.bag
+  date: '2023-02-23 16:17:16.265350+00:00'
+  weathercode: 51
+  meteo: Light Drizzle
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_23_2023-16_31_11.bag
+  date: '2023-02-23 21:31:11.062671+00:00'
+  weathercode: 51
+  meteo: Light Drizzle
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_27_2023-11_34_27.bag
+  date: '2023-02-27 16:34:27.837489+00:00'
+  weathercode: -1
+  meteo: null
+  direction: 1
+  road_type: curve
+- name: position_trigger_02_28_2023-06_09_29.bag
+  date: '2023-02-28 11:09:29.457324+00:00'
+  weathercode: 3
+  meteo: Overcast
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_28_2023-07_06_06.bag
+  date: '2023-02-28 12:06:06.851526+00:00'
+  weathercode: 3
+  meteo: Overcast
+  direction: 0
+  road_type: curve
+- name: position_trigger_02_28_2023-07_33_26.bag
+  date: '2023-02-28 12:33:26.101516+00:00'
+  weathercode: 3
+  meteo: Overcast
+  direction: 0
+  road_type: curve
