@@ -164,14 +164,14 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
   },
   "n_bags": 10,
   "n_directions": 2,
+  "road_type": "exit",
   "bags": [
     {
       "name": "position_trigger_02_09_2023-21_44_29.bag",
       "date": "2023-02-10 02:44:29.399899+00:00", // format ISO 8601
       "weathercode": 61,
       "meteo": "Slight Rain",
-      "direction": null,
-      "road_type": "exit"
+      "direction": null
     },
     {}
   ],

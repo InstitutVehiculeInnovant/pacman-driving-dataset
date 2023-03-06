@@ -1,0 +1,80 @@
+{
+  "location": {
+    "longitude": -72.5723196575008,
+    "latitude": 46.33310672819373
+  },
+  "n_bags": 9,
+  "n_directions": 1,
+  "road_type": "curve",
+  "bags": [
+    {
+      "name": "position_trigger_02_28_2023-06_09_29.bag",
+      "date": "2023-02-28 11:09:29.457324+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_28_2023-07_06_06.bag",
+      "date": "2023-02-28 12:06:06.851526+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_28_2023-07_33_26.bag",
+      "date": "2023-02-28 12:33:26.101516+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_01_2023-23_06_41.bag",
+      "date": "2023-03-02 04:06:41.183348+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_02_2023-03_17_22.bag",
+      "date": "2023-03-02 08:17:22.867611+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_02_2023-23_50_29.bag",
+      "date": "2023-03-03 04:50:29.464521+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-05_00_20.bag",
+      "date": "2023-03-04 10:00:20.762787+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-23_51_10.bag",
+      "date": "2023-03-05 04:51:10.543433+00:00",
+      "weathercode": 45,
+      "meteo": "Fog",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_05_2023-19_53_14.bag",
+      "date": "2023-03-06 00:53:14.867831+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    }
+  ],
+  "directions": [
+    [
+      139.4497205,
+      -138.31513349999997
+    ]
+  ]
+}

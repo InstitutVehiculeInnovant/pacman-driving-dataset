@@ -1,0 +1,80 @@
+{
+  "location": {
+    "longitude": -72.77264646602261,
+    "latitude": 46.44603227778924
+  },
+  "n_bags": 9,
+  "n_directions": 1,
+  "road_type": "straight",
+  "bags": [
+    {
+      "name": "position_trigger_02_28_2023-20_03_12.bag",
+      "date": "2023-03-01 01:03:12.001580+00:00",
+      "weathercode": 61,
+      "meteo": "Slight Rain",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_01_2023-08_14_06.bag",
+      "date": "2023-03-01 13:14:06.399101+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_01_2023-13_41_52.bag",
+      "date": "2023-03-01 18:41:52.425076+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_01_2023-21_15_55.bag",
+      "date": "2023-03-02 02:15:55.904592+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_02_2023-02_59_10.bag",
+      "date": "2023-03-02 07:59:10.965838+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-04_51_48.bag",
+      "date": "2023-03-04 09:51:48.003919+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-20_28_26.bag",
+      "date": "2023-03-05 01:28:26.897171+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_05_2023-21_08_33.bag",
+      "date": "2023-03-06 02:08:33.501535+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_06_2023-08_13_09.bag",
+      "date": "2023-03-06 13:13:09.114512+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    }
+  ],
+  "directions": [
+    [
+      -135.22441511111109,
+      -134.8649853333333
+    ]
+  ]
+}
