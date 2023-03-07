@@ -9,6 +9,13 @@ Cet ensemble de données répertorie X points de passages sur les routes, chacun
 # Guide sur l'installation
 Un échantillon des données est disponible dans "database_presentation"
 
+## Toutes les données sur une carte
+Chaque point correspond à un point une "location" dans "database_presentation".
+
+
+![map with path of the car](images_readme/positions_on_map.png)
+
+
 ## visualisation
 Voici 4 gifs présentant le même tronçon de route prit des jours différents. 
 
@@ -16,10 +23,10 @@ Voici 4 gifs présentant le même tronçon de route prit des jours différents.
 |----------|-----------|
 |![][gif3] | ![][gif4] |
 
-[gif1]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/readme_images/position_trigger_02_09_2023-21_44_29_h264.gif
-[gif2]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/readme_images/position_trigger_02_10_2023-08_48_34_h264.gif
-[gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/readme_images/position_trigger_02_11_2023-07_50_45_h264.gif
-[gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/readme_images/position_trigger_02_11_2023-12_21_48_h264.gif
+[gif1]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/images_readme/position_trigger_02_09_2023-21_44_29_h264.gif
+[gif2]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/images_readme/position_trigger_02_10_2023-08_48_34_h264.gif
+[gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
+[gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/78c21f5369ea9f096912821eb89094208acbbf0e/images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
 
 
 ### Map
@@ -28,7 +35,7 @@ Les points verts représentent les différentes positions du véhicule sur la du
 Les lignes bleues sont les routes les plus proches des points verts retrouvées par l'algorithme.
 Autrement dit, les routes sur lesquelles le véhicule se trouve probablement. 
 
-![map with path of the car](readme_images/loc2.png)
+![map with path of the car](images_readme/loc2.png)
 
 # Description des données
 ## ROS - Robot Operating System
@@ -171,7 +178,7 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
       "date": "2023-02-10 02:44:29.399899+00:00", // format ISO 8601
       "weathercode": 61,
       "meteo": "Slight Rain",
-      "direction": null
+      "direction": 0
     },
     {}
   ],
@@ -184,10 +191,6 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
   ]
 }
 ```
-<!-- 
-**Ajouter ABS et essui-glace dans le code** 
-Peut-être que non finalement.
--->
 
 Si la meteo n'est pas disponible dans la base de données (pour n'importe quelle raison), la valeur sera -1
 
