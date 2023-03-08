@@ -52,3 +52,5 @@ Thumbs.db
 database_presentation/*
 !database_presentation/location1/
 !database_presentation/location4/
+
+analysis_scripts/

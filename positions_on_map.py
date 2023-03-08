@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import contextily as cx
 
 """
-Plot positions of pictures on a map
+Plot positions of datas on a map
 """
 
 # Open all jsons to get locations
