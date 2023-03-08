@@ -50,7 +50,10 @@ Thumbs.db
 
 # large folder
 database_presentation/*
-!database_presentation/location1/
-!database_presentation/location4/
+# !database_presentation/location1/
+# database_presentation/location1/*
+!database_presentation/location1/position_trigger_02_20_2023-03_35_29.bag
+!database_presentation/location1/position_trigger_02_20_2023-16_18_08.bag
+
 
 analysis_scripts/
