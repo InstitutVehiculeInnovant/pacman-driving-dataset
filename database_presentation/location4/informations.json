@@ -1,0 +1,280 @@
+{
+  "location": {
+    "longitude": -72.5723196575008,
+    "latitude": 46.33310672819373
+  },
+  "n_bags": 37,
+  "n_directions": 2,
+  "road_type": "curve",
+  "bags": [
+    {
+      "name": "position_trigger_02_15_2023-15_23_11.bag",
+      "date": "2023-02-15 20:23:11.216008+00:00",
+      "weathercode": 51,
+      "meteo": "Light Drizzle",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_15_2023-16_25_15.bag",
+      "date": "2023-02-15 21:25:15.814781+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_16_2023-08_39_46.bag",
+      "date": "2023-02-16 13:39:46.752904+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_16_2023-15_04_03.bag",
+      "date": "2023-02-16 20:04:03.665176+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_16_2023-16_38_34.bag",
+      "date": "2023-02-16 21:38:34.261545+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_17_2023-03_26_37.bag",
+      "date": "2023-02-17 08:26:37.572088+00:00",
+      "weathercode": 61,
+      "meteo": "Slight Rain",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_17_2023-05_35_14.bag",
+      "date": "2023-02-17 10:35:14.275356+00:00",
+      "weathercode": 63,
+      "meteo": "Moderate Rain",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_17_2023-12_27_20.bag",
+      "date": "2023-02-17 17:27:20.142830+00:00",
+      "weathercode": 61,
+      "meteo": "Slight Rain",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_17_2023-22_40_11.bag",
+      "date": "2023-02-18 03:40:11.981276+00:00",
+      "weathercode": 1,
+      "meteo": "Mainly Clear",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_18_2023-00_38_47.bag",
+      "date": "2023-02-18 05:38:47.882917+00:00",
+      "weathercode": 1,
+      "meteo": "Mainly Clear",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_18_2023-10_00_07.bag",
+      "date": "2023-02-18 15:00:07.058312+00:00",
+      "weathercode": 2,
+      "meteo": "Partly Cloudy",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_18_2023-11_41_15.bag",
+      "date": "2023-02-18 16:41:15.877443+00:00",
+      "weathercode": 2,
+      "meteo": "Partly Cloudy",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_18_2023-15_24_49.bag",
+      "date": "2023-02-18 20:24:49.143952+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_19_2023-10_15_40.bag",
+      "date": "2023-02-19 15:15:40.974114+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_19_2023-11_18_55.bag",
+      "date": "2023-02-19 16:18:55.870916+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_19_2023-15_38_49.bag",
+      "date": "2023-02-19 20:38:49.665784+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_20_2023-14_15_23.bag",
+      "date": "2023-02-20 19:15:23.189277+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_21_2023-14_49_47.bag",
+      "date": "2023-02-21 19:49:47.852652+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_22_2023-04_25_30.bag",
+      "date": "2023-02-22 09:25:30.976683+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_22_2023-11_37_54.bag",
+      "date": "2023-02-22 16:37:54.377106+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_22_2023-14_41_16.bag",
+      "date": "2023-02-22 19:41:16.659142+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_22_2023-16_41_13.bag",
+      "date": "2023-02-22 21:41:13.276490+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_23_2023-08_18_40.bag",
+      "date": "2023-02-23 13:18:40.772114+00:00",
+      "weathercode": 53,
+      "meteo": "Moderate Drizzle",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_23_2023-09_44_15.bag",
+      "date": "2023-02-23 14:44:15.763042+00:00",
+      "weathercode": 51,
+      "meteo": "Light Drizzle",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_23_2023-11_17_16.bag",
+      "date": "2023-02-23 16:17:16.265350+00:00",
+      "weathercode": 51,
+      "meteo": "Light Drizzle",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_23_2023-16_31_11.bag",
+      "date": "2023-02-23 21:31:11.062671+00:00",
+      "weathercode": 51,
+      "meteo": "Light Drizzle",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_27_2023-11_34_27.bag",
+      "date": "2023-02-27 16:34:27.837489+00:00",
+      "weathercode": 1,
+      "meteo": "Mainly Clear",
+      "direction": 1
+    },
+    {
+      "name": "position_trigger_02_28_2023-06_09_29.bag",
+      "date": "2023-02-28 11:09:29.457324+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_28_2023-07_06_06.bag",
+      "date": "2023-02-28 12:06:06.851526+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_02_28_2023-07_33_26.bag",
+      "date": "2023-02-28 12:33:26.101516+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_01_2023-23_06_41.bag",
+      "date": "2023-03-02 04:06:41.183348+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_02_2023-03_17_22.bag",
+      "date": "2023-03-02 08:17:22.867611+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_02_2023-23_50_29.bag",
+      "date": "2023-03-03 04:50:29.464521+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-05_00_20.bag",
+      "date": "2023-03-04 10:00:20.762787+00:00",
+      "weathercode": 3,
+      "meteo": "Overcast",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_04_2023-23_51_10.bag",
+      "date": "2023-03-05 04:51:10.543433+00:00",
+      "weathercode": 45,
+      "meteo": "Fog",
+      "direction": 0
+    },
+    {
+      "name": "position_trigger_03_05_2023-19_53_14.bag",
+      "date": "2023-03-06 00:53:14.867831+00:00",
+      "weathercode": 0,
+      "meteo": "Clear Sky",
+      "direction": 1
+    },
+    {
+      "name": "position_trigger_03_06_2023-19_35_17.bag",
+      "date": "2023-03-07 00:35:17.965068+00:00",
+      "weathercode": -1,
+      "meteo": null,
+      "direction": 0
+    }
+  ],
+  "directions": [
+    [
+      139.35420217142854,
+      -137.77194754285716
+    ],
+    [
+      143.748198,
+      -166.512294
+    ]
+  ]
+}
