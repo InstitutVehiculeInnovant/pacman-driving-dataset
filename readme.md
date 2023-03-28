@@ -3,7 +3,11 @@ IVI Solution présente un jeu de données de conduite sur des routes Québécois
 Ces données ont été récupérées sur des routes Québécoises par une flotte de véhicules du Ministère du Transport du Québec.
 Cet ensemble de données répertorie X points de passages sur les routes, chacun avec un minimum de Y vidéos. 
 
+# Visualisation des données
 
+Visualisation des données à l'aide de [foxglove](https://foxglove.dev)
+
+<img src="images_readme/driving_ds_viz.png" width="700">
 
 # Guide sur l'installation
 Un échantillon de deux positions est disponible dans "database_presentation".
