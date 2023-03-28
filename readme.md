@@ -5,13 +5,16 @@ Cet ensemble de données répertorie X points de passages sur les routes, chacun
 
 
 
-
 # Guide sur l'installation
-Un échantillon des données est disponible dans "database_presentation"
+Un échantillon de deux positions est disponible dans "database_presentation".
+Un plus gros échantillon de 20 positions est disponible au téléchargement sur:
+__**insérer le lien ici**__
+
+
+
 
 ## Toutes les données sur une carte
-Chaque point correspond à un point une "location" dans "database_presentation".
-
+Chaque point sur la carte correspond à un dossier "location" dans le jeu de données disponible au téléchargement.
 
 ![map with path of the car](images_readme/positions_on_map.png)
 
@@ -41,10 +44,10 @@ Autrement dit, les routes sur lesquelles le véhicule se trouve probablement.
 # Description des données
 ## ROS - Robot Operating System
 ROS est un ensemble de librairies et d'outils qui permettent de fabriquer une application de robotique. L'architecture ROS permet une communication simple entre différents éléments via la publication de messages vers des topics. 
-Pour recevoir un message, un élément doit s'abonner à un topic. Pour envoyer, il suffit de *publier* à cette adresse.
+Pour recevoir un message, un élément doit s'abonner à un topic. Pour envoyer, il suffit de *publier* dans ce topic.
 
 Un **ROSbag** est un enregistrement des messages reçu par un ou plusieurs *topics*. 
-La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objts qui possèdent des valeurs et des listes. 
+La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objets qui possèdent des valeurs et des listes. 
 
 ## Liste des topics enregistrés
 
@@ -70,7 +73,7 @@ Unité: m/s²
 Description: Accélération longitudinale du véhicule par rapport à son référentiel.
 <!-- Accélération longitudinale ressentie par les occupants du véhicule. Une valeur positive représente une accélération du véhicule, les occupants sont pressés contre leur siège, le véhicule accélère les occupants vers l'avant.  
 Une valeur négative correspond à un freinage du véhicule et les occupants gardent leur inertie et peuvent être penché vers l'avant du véhicule.  -->
- 
+
 `/can/accel_pedal_pos`:  
 Type: std_msgs/msg/Float32  
 Unité: Pas d'unités, range [0,102.3]  
@@ -147,8 +150,7 @@ Description: Image de la route
 
 ## Structure des documents
 
-Chaque dossier contient tous les bags associés à une position.
-Un JSON global référence tous les bags avec leur date, et la météo.
+Chaque dossier contient tous les bags associés à une position et "position_metadata.json" qui référence tous les bags avec leur date, et la prédiction de la météo.
 
     .
     ├── position1
@@ -157,13 +159,13 @@ Un JSON global référence tous les bags avec leur date, et la météo.
     │   │   └── position_trigger1.bag_0.db3
     │   ├── position_trigger2.bag
     │   ├── ...
-    │   └── informations.json
+    │   └── position_metadata.json
     ├── position2
     └── ...
 
 Les "metadata.yaml" sont déjà présents dans la base de données et contiennent les infos relatives à chaque bag.
 
-*Strucutre d'**informations.json**:*
+*Strucutre d'**position_metadata.json**:*
 ```json
 {
   "location": {
@@ -171,7 +173,6 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
     "latitude": 45.54911467352514
   },
   "n_bags": 10,
-  "n_directions": 2,
   "road_type": "exit",
   "bags": [
     {
@@ -179,27 +180,52 @@ Les "metadata.yaml" sont déjà présents dans la base de données et contiennen
       "date": "2023-02-10 02:44:29.399899+00:00", // format ISO 8601
       "weathercode": 61,
       "meteo": "Slight Rain",
-      "direction": 0
     },
     {}
   ],
-  "directions": [
-    [
-      -139.6522782222222, //starting orientation
-      137.37112844444442 //ending orientation
-    ],
-    []
-  ]
 }
 ```
 
-Si la meteo n'est pas disponible dans la base de données (pour n'importe quelle raison), la valeur sera -1
+## Meteo 
+Chaque image contient "weathercode" et "meteo", ces deux informations sont redondantes. "weathercode" est le code de la météo donné par l'API (Open-Meteo) et "meteo" est la signification du code.
+**Note**: Si la météo n 'est pas disponible via l'API, le "weathercode" sera -1.
+**Note**: La prédiction de la météo peut être fausse et ne pas correspondre exactement à la météo que l'on peut voir sur une image mais elle donne une bonne indication.
 
-Les directions ne sont pas séparées, ainsi on pourra trouver facilement toutes les manières de prendre une même intersection.
+
+| Weathercode | Meteo | Traduction française |
+| --- | --- | --- |
+| 0 | Clear Sky | Ciel dégagé |
+| 1 | Mainly Clear | Principalement dégagé |
+| 2 | Partly Cloudy | Partiellement nuageux |
+| 3 | Overcast | Couvert |
+| 45 | Fog | Brouillard |
+| 48 | Depositing Rime Fog | Brouillard givrant |
+| 51 | Light Drizzle | Légère bruine |
+| 53 | Moderate Drizzle | Bruine modérée |
+| 55 | Dense Intensity Drizzle | Bruine forte |
+| 56 | Light Freezing Drizzle | Légère bruine verglaçante |
+| 57 | Dense Intensity Freezing Drizzle | Bruine verglaçante forte |
+| 61 | Slight Rain | Pluie légère |
+| 63 | Moderate Rain | Pluie modérée |
+| 65 | Heavy intensity Rain | Pluie forte |
+| 66 | Light Freezing Rain | Légère pluie verglaçante |
+| 67 | Heavy Intensity Freezing Rain | Pluie verglaçante forte |
+| 71 | Slight Snow fall | Légère chute de neige |
+| 73 | Moderate Snow fall | Chute de neige modérée |
+| 75 | Heavy Intensity Snow fall | Chute de neige forte |
+| 77 | Snow Grains | Grains de neige |
+| 80 | Slight Rain Showers | Légères averses de pluie |
+| 81 | Moderate Rain Showers | Averses de pluie modérées |
+| 82 | Violent Rain Showers | Averses de pluie violentes |
+| 85 | Slight Snow Showers | Légères averses de neige |
+| 86 | Heavy Snow Showers | Averses de neige fortes |
+| 95 | Thunderstorm | Orage |
+| 96 | Thunderstorm With Slight | Orage avec légère pluie |
+| 99 | Thunderstorm With Heavy Hail | Orage avec fortes chutes de grêle |
 
 
 
-## Génération des données
+# Génération des données
 De nombreux véhicules du Ministère du Transport du Québec sont équipés de caméras, de GPS et d'IMU. En plus de ces capteurs, un connecteur récupère les informations du CAN Bus du véhicule afin d'avoir accès à des informations telles que la vitesse, l'accélération, la position du volant, etc.
 
 Pour la création de ce jeu de données, 4 types de routes ont été choisies pour couvrir un maximum de situations possibles:
