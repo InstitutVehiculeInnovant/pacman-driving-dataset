@@ -36,7 +36,10 @@ Voici 4 gifs présentant le même tronçon de route prit des jours différents.
 [gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
 [gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
 
+Voici un gif synchronisé
+![][gif5]
 
+[gif5]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/c79af5639b5d1434da3f06cc8d8ca84f3a1bf730/images_readme/gifs/location2.gif
 ### Map
 Voici une image de la carte correspondant aux videos ci-dessus.
 Les points verts représentent les différentes positions du véhicule sur la durée de la vidéo.
