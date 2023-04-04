@@ -8,11 +8,8 @@ from time import perf_counter
 from pathlib import Path, PurePath
 import argparse
 import random
-import sys
 import os
 import shutil
-import cProfile
-import pstats
 """
 Création de gifs.
 
@@ -21,6 +18,9 @@ video = liste d'images
 Beaucoup de process passent par des fichiers temporaires parce que je ne peux pas charger tous les bags et toutes les images dans la mémoire.
 ça doit être possible d'optimiser plus en ouvrant un certain nombres de bags à la fois et en concaténant une section avant d'enregistrer.
 Mais ça complexifie le code et ça n'en vaut pas la chandelle.
+
+example of usage:
+python3 gif_creator.py -i database_presentation/location3 -n 4 -r
 """
 
 
@@ -251,7 +251,7 @@ def folder_to_gif(source_folder, destination_path, amount_to_open, image_reducti
     # shutil.rmtree(temp_folder_for_bags) 
     # video = load_sorted_images_from_folder(temp_folder_for_concatene)
     
-    #SOL 2: don't save concatenate images 
+    #SOL 2: don't save concatenate images, keep them in memory to save time
     video = load_concatenate_return(temp_folder_for_bags)
     shutil.rmtree(temp_folder_for_bags) 
     
@@ -273,11 +273,5 @@ if __name__ == "__main__":
         bag_to_gif(source_file, output_file, image_reduction = 2)
     else:
         #c'est un dossier
-        with cProfile.Profile() as pr:
-            folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = 2, get_random = get_random)
+        folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = 2, get_random = get_random)
         
-            #Debug analysis
-            # stats = pstats.Stats(pr)
-            # stats.sort_stats(pstats.SortKey.TIME)
-            # stats.dump_stats("profile.prof")
-            #Then analyse profile.prof with snakeviz
