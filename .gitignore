@@ -47,6 +47,7 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+*.gif
 
 # large folder
 database_presentation/*
@@ -61,5 +62,6 @@ Temp_concatene/
 
 images_readme/gifs/*
 !images_readme/gifs/location2.gif
+profile.prof
 
 analysis_scripts/

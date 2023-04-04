@@ -11,12 +11,16 @@ import random
 import sys
 import os
 import shutil
-
+import cProfile
+import pstats
 """
 Création de gifs.
 
 video = liste d'images
 
+Beaucoup de process passent par des fichiers temporaires parce que je ne peux pas charger tous les bags et toutes les images dans la mémoire.
+ça doit être possible d'optimiser plus en ouvrant un certain nombres de bags à la fois et en concaténant une section avant d'enregistrer.
+Mais ça complexifie le code et ça n'en vaut pas la chandelle.
 """
 
 
@@ -29,15 +33,24 @@ def get_rosbag_options(path:str, serialization_format:str="cdr"):
 def parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output', action='store', type=str, dest='output',
-                        default = "images_readme/gifs", help = 'Output folder name')
+                        default = "images_readme/gifs", help = 'Output folder name. The name of the file will be create automatically')
     parser.add_argument('-i','--input', action='store', type=str, dest='input',
-                            help = 'Input file name (bag) or folder name',
+                            help = 'Input file name (bag) or folder name.',
                             default="database_presentation/location1")
-    
+    parser.add_argument('-n','--number', action='store', type=int, dest='n_bags',
+                            help = 'amount of bags to open. Default = 4',
+                            default = 4)
+    parser.add_argument('-r', '--random', action='store_true', dest='get_random',
+                            help = 'if -r, get random bags in folder', default = False)
     args = parser.parse_args()
-    return args.input, args.output
+    return args.input, args.output, args.n_bags, args.get_random
+
+    
 
 def bag_to_video(source_bag)->list:
+    """
+    Return a list of images from a bag file
+    """
     # Ouverture des bags
     storage_options_in, converter_options_in = get_rosbag_options(str(source_bag))
     reader = rosbag2_py.SequentialReader()
@@ -50,11 +63,12 @@ def bag_to_video(source_bag)->list:
     frames = []
     while reader.has_next():
         topic, data, t = reader.read_next()
-        msg_type = get_message(type_map[topic])
-        msg = deserialize_message(data, msg_type)
-        
+
     # Enregistrement des images
         if topic == "/image_raw/compressed":
+            msg_type = get_message(type_map[topic])
+            msg = deserialize_message(data, msg_type)
+
             # Décompression de l'image compressée
             np_arr = np.frombuffer(msg.data, np.uint8)
             img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
@@ -67,30 +81,32 @@ def bag_to_video(source_bag)->list:
 
 def video_to_gif(frames:list, output_file:Path, duration:int = 10, image_reduction:int = 1):
     """
+    Enregistre un gif à partir d'une liste d'images.
+
     On sait le bag enregistré à 10 FPS
     standard duraction = 10s
+    Image reduction will take 1 image every n images.
     """
     start = perf_counter() #DEBUG
+    print("Starting timer for gif saving ...")
     fps = len(frames)/(duration*image_reduction)
     imageio.mimsave(output_file, frames[::image_reduction], fps = fps, loop = 0)
 
-    print(f"Done saving file. It took: {perf_counter() - start} s") #DEBUG
+    print(f"Done saving gif in {output_file}. It took: {perf_counter() - start} s") #DEBUG
 
 
 def bag_to_gif(source_bag:Path, output_file:Path, duration:int = 10, image_reduction:int = 1):
     """
-    On sait le bag enregistré à 10 FPS
-    standard duraction = 10s
-    n images = init_images / image_reuction
+    Enregistre un gif à partir d'un bag.
     """
     frames = bag_to_video(source_bag)
     print("Done reading bag. Saving file ...")
     video_to_gif(frames, output_file, duration, image_reduction)
 
 
-def get_multiple_bags(source_folder:Path, amount_to_open: int, get_random:bool = False)->list:
+def get_bags_name_from_folder(source_folder:Path, amount_to_open: int, get_random:bool = False)->list:
     """
-    Récupère les noms des n premiers bags d'un dossier.
+    Récupère les noms des n premiers bags d'un dossier. (ou aléatoirement si get_random = True)
     """
     if not isinstance(source_folder, PurePath): source_folder = Path(source_folder)
     bags = list(source_folder.glob("*.bag"))
@@ -106,25 +122,26 @@ def concatene_images(images:list)->np.ndarray:
     """
     Concatène les images en une seule image.
 
-    S'il en manque pour faire un carré, ajoute des 0
+    S'il en manque pour faire un carré, ajoute des carrés noirs
     """
     n_images = len(images)
     original_size = images[0].shape
+    black_image = np.zeros_like(images[0])
     if n_images == 1:
         return images[0]
     elif n_images == 2:
         return cv2.hconcat(images)
     elif n_images <= 4:
-        if n_images == 3: images.append(np.zeros_like(images[0]))
+        if n_images == 3: images.append(black_image)
         concat_image = cv2.vconcat([cv2.hconcat(images[:2]), cv2.hconcat(images[2:])])
     elif n_images <= 9:
-        for _ in range(9-n_images): images.append(np.zeros_like(images[0]))
+        for _ in range(9-n_images): images.append(black_image)
         concat_image = cv2.vconcat([cv2.hconcat(images[:3]), cv2.hconcat(images[3:6]), cv2.hconcat(images[6:])])
     elif n_images <= 16:
-        for _ in range(16-n_images): images.append(np.zeros_like(images[0]))
+        for _ in range(16-n_images): images.append(black_image)
         concat_image = cv2.vconcat([cv2.hconcat(images[:4]), cv2.hconcat(images[4:8]), cv2.hconcat(images[8:12]), cv2.hconcat(images[12:])])
     elif n_images <= 25:
-        for _ in range(25-n_images): images.append(np.zeros_like(images[0]))
+        for _ in range(25-n_images): images.append(black_image)
         concat_image = cv2.vconcat([cv2.hconcat(images[:5]), cv2.hconcat(images[5:10]), cv2.hconcat(images[10:15]), cv2.hconcat(images[15:20]), cv2.hconcat(images[20:])])
     else:
         print("Too many images to concatenate. Return only with 25 images")
@@ -134,6 +151,10 @@ def concatene_images(images:list)->np.ndarray:
 
 
 def extract_images_from_bag(source_bag:Path, destination_folder:Path, image_reduction:int = 1):
+    """
+    Extrait les images d'un bag et les enregistre dans un folder.
+    Si image_reduction, on prend 1 image sur n
+    """
     frames = bag_to_video(source_bag)
     if not os.path.exists(destination_folder): os.makedirs(destination_folder)
     for i, frame in enumerate(frames[::image_reduction]):
@@ -143,66 +164,120 @@ def extract_images_from_bags(source_folder:Path, destination_folder:Path, amount
     """
     Extrait les images de tous les bags et les enregistre dans des folders
     """
-    bags_name = get_multiple_bags(source_folder, amount_to_open, get_random)
+    bags_name = get_bags_name_from_folder(source_folder, amount_to_open, get_random)
     for bag_name in bags_name:
         extract_images_from_bag(bag_name, destination_folder.joinpath(bag_name.stem), image_reduction)
 
-def create_concatenate(source_folder:Path, destination_folder:Path):
+def extract_images_from_multiple_folders(general_folder, i, fill):
+    """
+    Open one image in each folder and return a list of all of them
+    """
+    images = []
+    black_image = None
+    for image_folder in general_folder:
+        image_path = image_folder.joinpath(f"{i}.jpg")
+        if image_path.exists():
+            if black_image is None: black_image = np.zeros_like(cv2.imread(str(image_path))) # Make a black image to fill missing images
+            #Load image
+            img = cv2.imread(image_path.as_posix())
+            images.append(img)
+        # Missing image
+        else:
+            if fill:
+                print(f"Debug: missing image {image_path}. Fill with black image")
+                images.append(black_image)
+            else:
+                raise Exception(f"Missing image {image_path}. Cannot create a perfect gif")
+    return images
+
+def load_concatenate_return(source_folder, fill = True):
+    images_folders = [folder for folder in source_folder.iterdir()]
+    n_images = len(list(images_folders[0].iterdir()))
+
+    video =  []
+    for i in range(n_images):
+        images  = extract_images_from_multiple_folders(images_folders, i, fill)
+        #Concatenate and return
+        concat_image = concatene_images(images)
+        video.append(concat_image)
+    return video
+
+
+def load_concatenate_save(source_folder:Path, destination_folder:Path, fill = True):
     """
     Source folder contient tous les dossiers, chaque dossier contient les images d'un bag.
-    JE DOIS AVOIR FILTRER AVANT POUR QU'IL Y AIT LE MEME NOMBRE D'IMAGES DANS CHAQUE DOSSIER
+
+    S'il manque des images dans un dossier. ça sera remplacé par un carré noir.
     """
     images_folders = [folder for folder in source_folder.iterdir()]
     n_images = len(list(images_folders[0].iterdir()))
     if not os.path.exists(destination_folder): os.makedirs(destination_folder)
+
     for i in range(n_images):
-        images = [cv2.imread(str(folder.joinpath(f"{i}.jpg"))) for folder in images_folders]
+        images = extract_images_from_multiple_folders(images_folders, i, fill)
+
+        #Concatenate and save 
         concat_image = concatene_images(images)
         cv2.imwrite(destination_folder.joinpath(f"{i}.jpg").as_posix(), concat_image)
 
-def load_images_from_folder(temp_folder_for_concatene:Path):
-    image_files = sorted(temp_folder_for_concatene.glob('*.jpg'), key=lambda x: int(x.stem))
+
+def load_sorted_images_from_folder(folder:Path):
+    """
+    Load all images from a folder
+    Images need to be named with a number
+    """
+    image_files = sorted(folder.glob('*.jpg'), key=lambda x: int(x.stem))
     images = []
     for filename in image_files:
         img = cv2.imread(filename.as_posix())
         if img is not None:
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             images.append(img_rgb)
+        else:
+            print(f"Debug: {filename} is not an image. It should'nt happen") 
     return images
 
-def complete_process_to_be_renamed(source_folder, destination_path, amount_to_open, image_reduction:int = 1, get_random:bool = False):
-    temp_folder_for_bags = Path("Temp")
-    temp_folder_for_concatene = Path("Temp_concatene")
+def folder_to_gif(source_folder, destination_path, amount_to_open, image_reduction:int = 1, get_random:bool = False):
+    temp_folder = Path("Temp")
+    temp_folder_for_bags = temp_folder.joinpath("bags")
+    temp_folder_for_concatene = temp_folder.joinpath("concatene")
+    if os.path.exists(temp_folder): shutil.rmtree(temp_folder) # Clean temp before creating new one to remove left overs
+    
     extract_images_from_bags(source_folder, temp_folder_for_bags, amount_to_open, image_reduction, get_random) #Reduction d'images lors de la créationn dde celles-ci
     print(f"saving concatene images in {temp_folder_for_concatene}")
-    create_concatenate(temp_folder_for_bags, temp_folder_for_concatene)
-    shutil.rmtree(temp_folder_for_bags)
-    video = load_images_from_folder(temp_folder_for_concatene)
-    print(f"Creating gif in {destination_path}")
+    
+    #SOL 1: Save concatene images #Il n'y a que 50 images à enregistrer et reload. ça fait pas beaucoup de temps ni de place finalement. Les deux sols sont bonnes
+    # load_concatenate_save(temp_folder_for_bags, temp_folder_for_concatene)
+    # shutil.rmtree(temp_folder_for_bags) 
+    # video = load_sorted_images_from_folder(temp_folder_for_concatene)
+    
+    #SOL 2: don't save concatenate images 
+    video = load_concatenate_return(temp_folder_for_bags)
+    shutil.rmtree(temp_folder_for_bags) 
+    
+    print(f"Creating gif in {destination_path}") 
     video_to_gif(video, destination_path, duration = 10)
+    shutil.rmtree(temp_folder)
 
 if __name__ == "__main__":
-    source_string, output_string = parser()
+    source_string, output_string, amount_to_open, get_random = parser()
     source_file = Path(source_string)
     output_folder = Path(output_string)
-    output_name = Path(source_string).with_suffix(".gif").name
+    output_file = output_folder.joinpath(source_file.name).with_suffix(".gif")
+    
+    if not source_file.exists():
+        raise Exception(f"{source_file} doesn't exist")
 
     if source_file.suffix:
         #c'est un bag
-        pass
+        bag_to_gif(source_file, output_file, image_reduction = 2)
     else:
         #c'est un dossier
-        pass
-
-    complete_process_to_be_renamed(source_file, output_folder / output_name, 25, image_reduction = 2, get_random = False)
-
-
-
-
-###Notes
-# Actuellement j'ouvre tous les bags en même temps, ce qui prend beaucoup de mémoire.
-# Je concatene chaque première image ensemble et je la sauvegarde dans un dossier.
-# Je fais pareil pour la deuxième image, etc.
-
-# Première idée: Extraire toutes les images d'un bag, les sauvegarder dans des dossiers séparés; Je dois déjà limiter le nombre d'images.
-# Ensuite je récupère les images et je les load une par une pour concaténer et réenregistrer
+        with cProfile.Profile() as pr:
+            folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = 2, get_random = get_random)
+        
+            #Debug analysis
+            # stats = pstats.Stats(pr)
+            # stats.sort_stats(pstats.SortKey.TIME)
+            # stats.dump_stats("profile.prof")
+            #Then analyse profile.prof with snakeviz
