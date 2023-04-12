@@ -20,7 +20,7 @@ Beaucoup de process passent par des fichiers temporaires parce que je ne peux pa
 Mais ça complexifie le code et ça n'en vaut pas la chandelle.
 
 example of usage:
-python3 gif_creator.py -i database_presentation/location3 -n 4 -r
+python3 gif_creator.py -i database_presentation/location3 -o images_readme/gifs -n 4 -r
 """
 
 
