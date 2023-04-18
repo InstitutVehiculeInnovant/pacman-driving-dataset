@@ -6,5 +6,10 @@ Script pour afficher des graphes sur des topics spécifiques pour une localisati
 """
 
 
+#Gather datas from bags
+
+
+#Plot datas
+
 
 

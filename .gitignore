@@ -65,3 +65,5 @@ images_readme/gifs/*
 profile.prof
 
 analysis_scripts/
+
+plot_topics.py

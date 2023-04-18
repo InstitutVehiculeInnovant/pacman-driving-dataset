@@ -42,8 +42,10 @@ def parser():
                             default = 4)
     parser.add_argument('-r', '--random', action='store_true', dest='get_random',
                             help = 'if -r, get random bags in folder', default = False)
+    parser.add_argument('-d', '--divide', action='store', type=int, dest='divide',
+                            help= 'Divide the number of frame by this number. Default = 1.', default = 1)
     args = parser.parse_args()
-    return args.input, args.output, args.n_bags, args.get_random
+    return args.input, args.output, args.n_bags, args.get_random, args.divide
 
     
 
@@ -90,7 +92,7 @@ def video_to_gif(frames:list, output_file:Path, duration:int = 10, image_reducti
     start = perf_counter() #DEBUG
     print("Starting timer for gif saving ...")
     fps = len(frames)/(duration*image_reduction)
-    imageio.mimsave(output_file, frames[::image_reduction], fps = fps, loop = 0)
+    imageio.mimsave(output_file, frames[::image_reduction], fps = fps , loop = 0)
 
     print(f"Done saving gif in {output_file}. It took: {perf_counter() - start} s") #DEBUG
 
@@ -260,7 +262,7 @@ def folder_to_gif(source_folder, destination_path, amount_to_open, image_reducti
     shutil.rmtree(temp_folder)
 
 if __name__ == "__main__":
-    source_string, output_string, amount_to_open, get_random = parser()
+    source_string, output_string, amount_to_open, get_random, image_reduction = parser()
     source_file = Path(source_string)
     output_folder = Path(output_string)
     output_file = output_folder.joinpath(source_file.name).with_suffix(".gif")
@@ -270,8 +272,8 @@ if __name__ == "__main__":
 
     if source_file.suffix:
         #c'est un bag
-        bag_to_gif(source_file, output_file, image_reduction = 2)
+        bag_to_gif(source_file, output_file, image_reduction = image_reduction)
     else:
         #c'est un dossier
-        folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = 2, get_random = get_random)
+        folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = image_reduction, get_random = get_random)
         
