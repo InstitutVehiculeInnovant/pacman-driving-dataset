@@ -10,6 +10,8 @@ import argparse
 import random
 import os
 import shutil
+
+
 """
 Création de gifs.
 
@@ -21,6 +23,14 @@ Mais ça complexifie le code et ça n'en vaut pas la chandelle.
 
 example of usage:
 python3 gif_creator.py -i database_presentation/location3 -o images_readme/gifs -n 4 -r
+python3 gif_creator.py -i database_presentation/location3 -o images_readme/gifs -n 4 -f mp4 -r
+
+gif takes too much place, use MP4 instead.
+
+REQUIREMENTS for optimization (commented at the end so won't be a problem if you don't have them):
+pip install pygifsicle
+sudo apt-get install gifsicle
+
 """
 
 
@@ -44,8 +54,10 @@ def parser():
                             help = 'if -r, get random bags in folder', default = False)
     parser.add_argument('-d', '--divide', action='store', type=int, dest='divide',
                             help= 'Divide the number of frame by this number. Default = 1.', default = 1)
+    parser.add_argument('-f', '--format', action='store', type=str, dest='format', default = "gif",
+                            help = 'Format of the output file. Default = gif. Other options: mp4')
     args = parser.parse_args()
-    return args.input, args.output, args.n_bags, args.get_random, args.divide
+    return args.input, args.output, args.n_bags, args.get_random, args.divide, args.format
 
     
 
@@ -81,7 +93,7 @@ def bag_to_video(source_bag)->list:
     
     return frames
 
-def video_to_gif(frames:list, output_file:Path, duration:int = 10, image_reduction:int = 1):
+def video_to_file(frames:list, output_file:Path, duration:int = 10, image_reduction:int = 1):
     """
     Enregistre un gif à partir d'une liste d'images.
 
@@ -92,7 +104,7 @@ def video_to_gif(frames:list, output_file:Path, duration:int = 10, image_reducti
     start = perf_counter() #DEBUG
     print("Starting timer for gif saving ...")
     fps = len(frames)/(duration*image_reduction)
-    imageio.mimsave(output_file, frames[::image_reduction], fps = fps , loop = 0)
+    imageio.mimsave(output_file, frames[::image_reduction], fps = fps)
 
     print(f"Done saving gif in {output_file}. It took: {perf_counter() - start} s") #DEBUG
 
@@ -103,7 +115,7 @@ def bag_to_gif(source_bag:Path, output_file:Path, duration:int = 10, image_reduc
     """
     frames = bag_to_video(source_bag)
     print("Done reading bag. Saving file ...")
-    video_to_gif(frames, output_file, duration, image_reduction)
+    video_to_file(frames, output_file, duration, image_reduction)
 
 
 def get_bags_name_from_folder(source_folder:Path, amount_to_open: int, get_random:bool = False)->list:
@@ -239,7 +251,7 @@ def load_sorted_images_from_folder(folder:Path):
             print(f"Debug: {filename} is not an image. It should'nt happen") 
     return images
 
-def folder_to_gif(source_folder, destination_path, amount_to_open, image_reduction:int = 1, get_random:bool = False):
+def folder_to_gif(source_folder, destination_path, amount_to_open, image_reduction:int = 1, get_random:bool = False, ):
     temp_folder = Path("Temp")
     temp_folder_for_bags = temp_folder.joinpath("bags")
     temp_folder_for_concatene = temp_folder.joinpath("concatene")
@@ -257,16 +269,21 @@ def folder_to_gif(source_folder, destination_path, amount_to_open, image_reducti
     video = load_concatenate_return(temp_folder_for_bags)
     shutil.rmtree(temp_folder_for_bags) 
     
-    print(f"Creating gif in {destination_path}") 
-    video_to_gif(video, destination_path, duration = 10)
+    print(f"Creating gif in {destination_path}")
+    video_to_file(video, destination_path, duration = 10)
     shutil.rmtree(temp_folder)
 
 if __name__ == "__main__":
-    source_string, output_string, amount_to_open, get_random, image_reduction = parser()
+    source_string, output_string, amount_to_open, get_random, image_reduction, format = parser()
     source_file = Path(source_string)
     output_folder = Path(output_string)
-    output_file = output_folder.joinpath(source_file.name).with_suffix(".gif")
-    
+    if format == "gif":
+        output_file = output_folder.joinpath(source_file.name).with_suffix(".gif")
+    elif format == "mp4":
+        output_file = output_folder.joinpath(source_file.name).with_suffix(".mp4")
+    else:
+        raise Exception(f"Format {format} not supported")
+
     if not source_file.exists():
         raise Exception(f"{source_file} doesn't exist")
 
@@ -277,3 +294,9 @@ if __name__ == "__main__":
         #c'est un dossier
         folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = image_reduction, get_random = get_random)
         
+    #optimizing the gif
+    # if format == "gif":
+    #     from pygifsicle import optimize
+    #     print("Optimizing gif...")
+    #     optimize(output_file, output_file.with_suffix("_optimized.gif"))
+    #     print("Done")
