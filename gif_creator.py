@@ -27,12 +27,8 @@ python3 gif_creator.py -i database_presentation/location3 -o images_readme/gifs 
 
 gif takes too much place, use MP4 instead.
 
-REQUIREMENTS for optimization (commented at the end so won't be a problem if you don't have them):
-pip install pygifsicle
-sudo apt-get install gifsicle
 
 """
-
 
 def get_rosbag_options(path:str, serialization_format:str="cdr"):
     storage_options = rosbag2_py.StorageOptions(uri=path, storage_id="sqlite3")
@@ -95,7 +91,8 @@ def bag_to_video(source_bag)->list:
 
 def video_to_file(frames:list, output_file:Path, duration:int = 10, image_reduction:int = 1):
     """
-    Enregistre un gif à partir d'une liste d'images.
+    Enregistre un .gif/.mp4 à partir d'une liste d'images. (le format se trouve dans le nom du fichier)
+
 
     On sait le bag enregistré à 10 FPS
     standard duraction = 10s
@@ -194,7 +191,8 @@ def extract_images_from_multiple_folders(general_folder, i, fill):
             if black_image is None: black_image = np.zeros_like(cv2.imread(str(image_path))) # Make a black image to fill missing images
             #Load image
             img = cv2.imread(image_path.as_posix())
-            images.append(img)
+            img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            images.append(img_rgb)
         # Missing image
         else:
             if fill:
@@ -211,6 +209,7 @@ def load_concatenate_return(source_folder, fill = True):
     video =  []
     for i in range(n_images):
         images  = extract_images_from_multiple_folders(images_folders, i, fill)
+        
         #Concatenate and return
         concat_image = concatene_images(images)
         video.append(concat_image)
@@ -294,9 +293,16 @@ if __name__ == "__main__":
         #c'est un dossier
         folder_to_gif(source_file, output_file, amount_to_open = amount_to_open, image_reduction = image_reduction, get_random = get_random)
         
+
+    
     #optimizing the gif
     # if format == "gif":
-    #     from pygifsicle import optimize
+    #     from pygifsicle import optimize 
     #     print("Optimizing gif...")
     #     optimize(output_file, output_file.with_suffix("_optimized.gif"))
     #     print("Done")
+
+    # REQUIREMENTS for optimization:
+    # pip install pygifsicle
+    # sudo apt-get install gifsicle   
+    
