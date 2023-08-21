@@ -252,3 +252,6 @@ commentaire de PM:
 Pour /image_raw/compressed
 "Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture." 
 -->
+
+<iframe src="https://studio.foxglove.dev/?ds=sample-nuscenes&layoutId=bfe84b16-3420-41d0-bc52-196118ad56f1&time=2018-07-24T03%3A28%3A47.703844000Z" title="foxglove data viz demo">
+</iframe>
