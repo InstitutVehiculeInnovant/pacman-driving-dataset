@@ -7,7 +7,12 @@ Cet ensemble de données répertorie X points de passages sur les routes, chacun
 
 Visualisation des données à l'aide de [foxglove](https://foxglove.dev)
 
-<img src="images_readme/driving_ds_viz.png" width="700">
+
+<iframe
+src="https://foxglove.sparkpi.ca/?ds=remote-file&ds.url=https%3A%2F%2Fpacman-foxglove-demo.s3.amazonaws.com%2Fdemo.mcap&time=2023-01-25T13%3A57%3A18.319968734Z"
+width='100%' height='700' title="foxglove data viz demo">
+</iframe>
+
 
 # Guide sur l'installation
 Un échantillon de deux positions est disponible dans "database_presentation".
@@ -31,15 +36,16 @@ Voici 4 gifs présentant le même tronçon de route prit des jours différents.
 |![][gif3] | ![][gif4] |
 
 
-[gif1]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_09_2023-21_44_29_h264.gif
-[gif2]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_10_2023-08_48_34_h264.gif
-[gif3]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
-[gif4]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/5fd2aa029baf3e5808d1a6dae90f2d37e04556dd/images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
+[gif1]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_09_2023-21_44_29_h264.gif
+[gif2]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_10_2023-08_48_34_h264.gif
+[gif3]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
+[gif4]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
 
 Voici un gif synchronisé
 ![][gif5]
 
-[gif5]:https://bitbucket.org/ivi-arion/pacman-driving-dataset/raw/c79af5639b5d1434da3f06cc8d8ca84f3a1bf730/images_readme/gifs/location2.gif
+[gif5]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/loc2.png
+
 ### Map
 Voici une image de la carte correspondant aux videos ci-dessus.
 Les points verts représentent les différentes positions du véhicule sur la durée de la vidéo.
@@ -253,7 +259,3 @@ Pour /image_raw/compressed
 "Pas dans la description des topics mais il va falloir. Partagé la transformé entre les différents repère. Le /fix de donne la position de antenne GPS pas du référenciel de la voiture." 
 -->
 
-<iframe
-src="https://foxglove.sparkpi.ca/?ds=remote-file&ds.url=https%3A%2F%2Fpacman-foxglove-demo.s3.amazonaws.com%2Fdemo.mcap&time=2023-01-25T13%3A57%3A18.319968734Z"
-width='100%' height='700' title="foxglove data viz demo">
-</iframe>
