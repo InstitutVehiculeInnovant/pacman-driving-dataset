@@ -45,7 +45,7 @@ Voici un gif synchronisé
 ![][gif5]
 
 <!-- [gif5]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/loc2.png -->
-[gif5]: ./images_readme/loc2.png
+[gif5]: ./images_readme/gifs/location2.gif
 
 ### Map
 Voici une image de la carte correspondant aux videos ci-dessus.
