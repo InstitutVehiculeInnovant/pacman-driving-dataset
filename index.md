@@ -63,7 +63,10 @@ Pour recevoir un message, un élément doit s'abonner à un topic. Pour envoyer,
 Un **ROSbag** est un enregistrement des messages reçu par un ou plusieurs *topics*. 
 La structure d'un message est semblable à celle d'un JSON, c'est à dire qu'il y a des objets qui possèdent des valeurs et des listes. 
 
-## Liste des topics enregistrés
+
+<details>
+<summary><b>Liste des topics enregistrés</b></summary>
+
 
 `/camera_info`:   
 Type: sensor_msgs/msg/CameraInfo  
@@ -161,6 +164,7 @@ Type: sensor_msgs/msg/CompressedImage
 Format: JPEG  
 Description: Image de la route  
   
+</details>
 
 ## Structure des documents
 
@@ -205,6 +209,8 @@ Chaque image contient "weathercode" et "meteo", ces deux informations sont redon
 **Note**: Si la météo n 'est pas disponible via l'API, le "weathercode" sera -1.
 **Note**: La prédiction de la météo peut être fausse et ne pas correspondre exactement à la météo que l'on peut voir sur une image mais elle donne une bonne indication.
 
+<details>
+  <summary><b>Codes de météo</b></summary>
 
 | Weathercode | Meteo | Traduction française |
 | --- | --- | --- |
@@ -237,6 +243,7 @@ Chaque image contient "weathercode" et "meteo", ces deux informations sont redon
 | 96 | Thunderstorm With Slight | Orage avec légère pluie |
 | 99 | Thunderstorm With Heavy Hail | Orage avec fortes chutes de grêle |
 
+</details>
 
 
 # Génération des données
