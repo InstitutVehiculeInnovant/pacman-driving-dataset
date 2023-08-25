@@ -36,10 +36,10 @@ Voici 4 gifs présentant le même tronçon de route prit des jours différents.
 |![][gif3] | ![][gif4] |
 
 
-[gif1]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_09_2023-21_44_29_h264.gif
-[gif2]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_10_2023-08_48_34_h264.gif
-[gif3]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
-[gif4]:https://github.com/InstitutVehiculeInnovant/pacman-driving-dataset/blob/main/images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
+[gif1]:./images_readme/position_trigger_02_09_2023-21_44_29_h264.gif
+[gif2]:./images_readme/position_trigger_02_10_2023-08_48_34_h264.gif
+[gif3]:./images_readme/position_trigger_02_11_2023-07_50_45_h264.gif
+[gif4]:./images_readme/position_trigger_02_11_2023-12_21_48_h264.gif
 
 Voici un gif synchronisé
 ![][gif5]
