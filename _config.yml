@@ -1,3 +1,5 @@
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+github:
+  zip_url: https://mtq-ets-ivi.etsmtl.ca/Test/can_trigger_acclat_04_03_2023-10_31_25_ca978ca5.bag/can_trigger_acclat_04_03_2023-10_31_25_ca978ca5.bag_0.db3
