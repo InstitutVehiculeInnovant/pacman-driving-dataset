@@ -9,7 +9,7 @@ Visualisation des données à l'aide de [foxglove](https://foxglove.dev)
 
 
 <iframe
-src="https://foxglove.sparkpi.ca/?ds=remote-file&ds.url=https%3A%2F%2Fpacman-foxglove-demo.s3.amazonaws.com%2Fdemo.mcap&time=2023-01-25T13%3A57%3A18.319968734Z"
+src="https://foxglove.ivisolutions.ca:12455/?ds=remote-file&ds.url=https%3A%2F%2Fpacman-foxglove-demo.s3.amazonaws.com%2Fdemo.mcap&time=2023-01-25T13%3A57%3A18.319968734Z"
 width='100%' height='700' title="foxglove data viz demo">
 </iframe>
 
